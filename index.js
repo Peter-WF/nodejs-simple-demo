@@ -6,7 +6,7 @@
  */
 
 const express = require('express')
-require('mock-server')
+require('nodejs-mock-server')
 
 const app = express()
 
