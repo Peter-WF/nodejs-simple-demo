@@ -15,10 +15,8 @@ MS.init({
   appDir: __dirname
 })
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', function(req, res) {
-  res.send('hello world')
-})
+// add intercept
+app.use('/api/*', MS.intercept())
 
 // get all project
 app.get('/api/projects/$', function(req, res) {
