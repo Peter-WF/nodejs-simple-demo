@@ -8,6 +8,10 @@
 const express = require('express')
 require('nodejs-mock-server')
 
+const utils = require('./utils')
+
+const config = require('./config.json')
+
 const app = express()
 
 MS.init({
@@ -16,7 +20,22 @@ MS.init({
 })
 
 // add intercept
-app.use('/api/*', MS.intercept())
+app.use('/api/*', MS.intercept(), function(req, res, next) {
+  // 如果 referer 不存在那么返回 404，暂时不添加该限制
+  // if (!req.headers.referer) {
+  //   res.sendStatus(403)
+  //   return
+  // }
+  const isAllowed = config.apiOriginList.split(',').some(item => {
+    return req.headers.referer.indexOf(item) === 0
+  })
+  if (!isAllowed) {
+    res.sendStatus(403)
+    return
+  }
+  utils.cors(req, res)
+  next()
+})
 
 // get all project
 app.get('/api/projects/$', function(req, res) {
