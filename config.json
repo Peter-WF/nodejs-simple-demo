@@ -1,3 +1,3 @@
 {
-  "apiOriginList": "http://demo.wangfeia.com"
+  "apiOriginList": "http://api.wangfeia.com,http://demo.wangfeia.com"
 }
