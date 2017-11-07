@@ -17,11 +17,10 @@ MS.init({
   appDir: __dirname
 })
 
-
 // add intercept
 app.use('/api/*', utils.authority, utils.cors, MS.intercept())
 
-app.options('/api/*',function() {
+app.options('/api/*', function(req, res) {
   res.sendStatus(200)
 })
 
