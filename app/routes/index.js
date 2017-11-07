@@ -8,7 +8,7 @@
 const express = require('express')
 require('nodejs-mock-server')
 
-const utils = require('./utils')
+const utils = require('../utils')
 
 const app = express()
 

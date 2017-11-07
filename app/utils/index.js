@@ -6,7 +6,7 @@
  */
 
 'use strict';
-const config = require('./config.json')
+const config = require('../config.json')
 
 module.exports = {
   cors(req, res, next) {

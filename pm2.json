@@ -2,9 +2,11 @@
   "apps": [
     {
       "name": "nodejs-simple-demo",
-      "script": "./index.js",
-      "watch": true,
-      "ignore_watch" : [
+      "script": "./app/routes/index.js",
+      "watch": [
+        "app"
+      ],
+      "ignore_watch": [
         "node_modules",
         "logs",
         "mock"
@@ -12,8 +14,8 @@
       "instances": 4,
       "node_args": "--harmony",
       "exec_mode": "cluster",
-      "error_file" : "./logs/app-err.log",
-      "out_file"   : "./logs/app-out.log"
+      "error_file": "./logs/nodejs-simple-demo-err.log",
+      "out_file": "./logs/nodejs-simple-demo-out.log"
     }
   ]
 }
