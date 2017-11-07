@@ -8,6 +8,7 @@
         "node_modules",
         "logs"
       ],
+      "instances": 4,
       "node_args": "--harmony",
       "exec_mode": "cluster",
       "error_file" : "./logs/app-err.log",
