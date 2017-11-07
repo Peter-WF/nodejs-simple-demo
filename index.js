@@ -17,8 +17,13 @@ MS.init({
   appDir: __dirname
 })
 
+
 // add intercept
 app.use('/api/*', utils.authority, utils.cors, MS.intercept())
+
+app.options('/api/*',function() {
+  res.sendStatus(200)
+})
 
 // get all project
 app.get('/api/projects/$', function(req, res) {
