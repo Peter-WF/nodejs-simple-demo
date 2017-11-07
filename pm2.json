@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "nodejs-simple-demo",
+      "script": "./index.js",
+      "watch": true,
+      "ignore_watch" : [
+        "node_modules",
+        "logs"
+      ],
+      "node_args": "--harmony",
+      "exec_mode": "cluster",
+      "error_file" : "./logs/app-err.log",
+      "out_file"   : "./logs/app-out.log"
+    }
+  ]
+}
