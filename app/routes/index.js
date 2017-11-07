@@ -6,6 +6,7 @@
  */
 
 const express = require('express')
+const path = require('path')
 require('nodejs-mock-server')
 
 const utils = require('../utils')
@@ -14,7 +15,7 @@ const app = express()
 
 MS.init({
   app,
-  appDir: __dirname
+  appDir: path.join(__dirname,'../../')
 })
 
 // add intercept
