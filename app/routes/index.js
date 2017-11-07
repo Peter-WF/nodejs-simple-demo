@@ -15,7 +15,7 @@ const app = express()
 
 MS.init({
   app,
-  appDir: path.join(__dirname,'../../')
+  appDir: path.resolve(__dirname, '../..')
 })
 
 // add intercept
