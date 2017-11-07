@@ -6,7 +6,8 @@
       "watch": true,
       "ignore_watch" : [
         "node_modules",
-        "logs"
+        "logs",
+        "mock"
       ],
       "instances": 4,
       "node_args": "--harmony",
